@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-11",
+  "policy": "Pinned conceptual extraction; no whole repository or verbatim skill body is vendored.",
+  "sources": [
+    {
+      "repository": "anthropics/skills",
+      "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+      "license": "mixed-per-skill",
+      "classification": "reference-and-structure-only",
+      "selected": [
+        {"path":"skills/webapp-testing/SKILL.md","blobSha":"4726215301db64a0cc4d41fc3219c61f37a30f4a","use":"progressive disclosure and tool-output isolation pattern"},
+        {"path":"skills/frontend-design/SKILL.md","blobSha":"decdff43d05908b4c1fc2cfd2d80fc5743440934","use":"design critique themes only"}
+      ],
+      "excluded": ["skills/docx", "skills/pdf", "skills/pptx", "skills/xlsx", "brand assets", "all source-available text"]
+    },
+    {
+      "repository": "Fission-AI/OpenSpec",
+      "commit": "e50bd0983dc8dc48250e3181f36e28450542f2ab",
+      "license": "MIT",
+      "licenseBlobSha": "84c125ae7b8ee08dc5b6e06358ebb6134f45a4c4",
+      "classification": "extract-specific-parts",
+      "use": "current/change/archive spec lifecycle and explicit deltas"
+    },
+    {
+      "repository": "github/spec-kit",
+      "commit": "9d15554c08ac5d01dc669dbd1a161a9638bc673b",
+      "license": "MIT",
+      "licenseBlobSha": "28a50fa22639e32febe14e4ffc7a732b0ba8c90a",
+      "classification": "extract-specific-parts",
+      "use": "constitution, specification, plan, and task separation"
+    },
+    {
+      "repository": "addyosmani/agent-skills",
+      "commit": "7676817c12a1317454ae3898a0c5c1eacf5dd3d5",
+      "license": "MIT",
+      "licenseBlobSha": "d67778ada6b9cda6227e9130da182c13e73c8b2e",
+      "classification": "extract-specific-parts",
+      "use": "frontend performance and testing checklists"
+    },
+    {
+      "repository": "obra/superpowers",
+      "commit": "44c9b2d6e889982ac18c27d05a19fefe335194e1",
+      "license": "MIT",
+      "licenseBlobSha": "abf0390320aa14406af7a520b9b0739fdda9bf08",
+      "classification": "extract-specific-parts",
+      "use": "evidence-first debugging, plan-before-change, and verification discipline"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "commit": "251135e1900662ed048dda391211f1895ab42d7e",
+      "license": "Apache-2.0",
+      "licenseBlobSha": "bb3f6d23b1f8025514a62a12b51b47d73e3c9aa9",
+      "noticeBlobSha": "0468271c904ae334cfaf27da6f8df3d5f419a1f0",
+      "noticeDisposition": "Audited; its platform-design attribution applies only to ios.md/android.md, which Work OS did not select.",
+      "classification": "extract-specific-parts",
+      "use": "interface critique dimensions and anti-pattern awareness"
+    },
+    {
+      "repository": "coreyhaines31/marketingskills",
+      "commit": "7868cb9251fad80a73d26e488a5ad5f6c4a9f335",
+      "license": "MIT",
+      "licenseBlobSha": "7c48dd638a9ebed49a8ef0c0c4eea90105381cdf",
+      "classification": "extract-specific-parts",
+      "use": "growth, SEO, CRO, offer, copy, and campaign procedure coverage"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "commit": "e7ee9de57ea0581aa0251d119e6bcf4680a58c14",
+      "license": "Apache-2.0",
+      "licenseBlobSha": "f53c679acba79cbb292961fd9fb9e87ca20eab22",
+      "selectedDirectoryLicenseBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "licenseScope": "The selected product-management, sales, customer-support, and data directories each carry this Apache-2.0 license blob.",
+      "classification": "extract-specific-parts",
+      "use": "research, sales, operations, and support output contracts"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "commit": "9b081280bc52ee6f22a2e0463761b318936dd980",
+      "license": "MIT",
+      "licenseBlobSha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "classification": "extract-specific-parts",
+      "use": "hook safety categories and cross-platform validation ideas"
+    }
+  ]
+}

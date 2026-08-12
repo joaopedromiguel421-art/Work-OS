@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "workOsVersion": "{{WORK_OS_VERSION}}",
+  "initializedAt": "{{INIT_DATE}}",
+  "mcpDefault": "off",
+  "mainOwnsWrites": true
+}

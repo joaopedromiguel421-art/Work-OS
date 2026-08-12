@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "work-os-marketplace",
+  "owner": {
+    "name": "Work OS Contributors"
+  },
+  "metadata": {
+    "description": "Curated native workflows for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "work-os",
+      "source": "./plugins/work-os",
+      "description": "Integrated engineering, product, research, design, growth, sales, operations, and data workflows for Claude Code.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Work OS Contributors"
+      },
+      "license": "Apache-2.0",
+      "category": "development",
+      "tags": ["workflow", "skills", "quality", "security", "productivity"]
+    }
+  ]
+}

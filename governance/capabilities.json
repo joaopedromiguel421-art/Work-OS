@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "policy": {
+    "singleOwner": true,
+    "mainOwnsWrites": true,
+    "maxConcurrentCustomSubagents": 2,
+    "maxCustomSubagentsPerTask": 3
+  },
+  "capabilities": [
+    {"name":"work","mechanism":"skill","owner":"work","manualOnly":true,"companions":[]},
+    {"name":"project-context","mechanism":"skill","owner":"project-context","manualOnly":true,"companions":["technical-documentation"]},
+    {"name":"evidence-research","mechanism":"skill","owner":"evidence-research","companions":["market-intelligence","data-analysis"]},
+    {"name":"spec-delivery","mechanism":"skill","owner":"spec-delivery","companions":["architecture-decisions","testing-strategy"]},
+    {"name":"architecture-decisions","mechanism":"skill","owner":"architecture-decisions","companions":["spec-delivery","security-engineering"]},
+    {"name":"testing-strategy","mechanism":"skill","owner":"testing-strategy","companions":["spec-delivery","performance-engineering"]},
+    {"name":"database-changes","mechanism":"skill","owner":"database-changes","companions":["security-engineering","testing-strategy"]},
+    {"name":"performance-engineering","mechanism":"skill","owner":"performance-engineering","companions":["testing-strategy","analytics-measurement"]},
+    {"name":"security-engineering","mechanism":"skill","owner":"security-engineering","companions":["architecture-decisions","database-changes"]},
+    {"name":"technical-documentation","mechanism":"skill","owner":"technical-documentation","companions":["project-context"]},
+    {"name":"product-discovery","mechanism":"skill","owner":"product-discovery","companions":["market-intelligence","analytics-measurement"]},
+    {"name":"interface-design","mechanism":"skill","owner":"interface-design","companions":["brand-system","cro-experimentation"]},
+    {"name":"brand-system","mechanism":"skill","owner":"brand-system","companions":["interface-design","copy-and-content"]},
+    {"name":"market-intelligence","mechanism":"skill","owner":"market-intelligence","companions":["evidence-research","positioning-and-offer"]},
+    {"name":"positioning-and-offer","mechanism":"skill","owner":"positioning-and-offer","companions":["market-intelligence","copy-and-content"]},
+    {"name":"copy-and-content","mechanism":"skill","owner":"copy-and-content","companions":["brand-system","seo"]},
+    {"name":"landing-page","mechanism":"skill","owner":"landing-page","companions":["interface-design","copy-and-content","cro-experimentation"]},
+    {"name":"seo","mechanism":"skill","owner":"seo","companions":["copy-and-content","analytics-measurement"]},
+    {"name":"cro-experimentation","mechanism":"skill","owner":"cro-experimentation","companions":["landing-page","analytics-measurement"]},
+    {"name":"campaign-growth","mechanism":"skill","owner":"campaign-growth","companions":["positioning-and-offer","analytics-measurement"]},
+    {"name":"analytics-measurement","mechanism":"skill","owner":"analytics-measurement","companions":["data-analysis","cro-experimentation"]},
+    {"name":"sales","mechanism":"skill","owner":"sales","companions":["positioning-and-offer","market-intelligence"]},
+    {"name":"customer-support","mechanism":"skill","owner":"customer-support","companions":["technical-documentation","product-discovery"]},
+    {"name":"business-operations","mechanism":"skill","owner":"business-operations","companions":["data-analysis","technical-documentation"]},
+    {"name":"data-analysis","mechanism":"skill","owner":"data-analysis","companions":["analytics-measurement","evidence-research"]}
+  ]
+}

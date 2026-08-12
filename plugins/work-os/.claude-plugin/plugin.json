@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "work-os",
+  "version": "0.1.0",
+  "description": "One coherent Work OS for Claude Code, built from native skills, read-only subagents, hooks, rules, and deterministic quality gates.",
+  "author": {
+    "name": "Work OS Contributors"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["workflows", "engineering", "product", "growth", "security"]
+}

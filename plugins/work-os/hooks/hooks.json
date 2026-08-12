@@ -1,0 +1,44 @@
+{
+  "description": "Work OS lifecycle, policy, quality, and observability handlers",
+  "hooks": {
+    "SessionStart": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "InstructionsLoaded": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5,"async":true}]}
+    ],
+    "PreToolUse": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "PermissionRequest": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "PostToolUse": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5,"async":true}]}
+    ],
+    "PostToolUseFailure": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "PostToolBatch": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":60}]}
+    ],
+    "SubagentStart": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "SubagentStop": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "PreCompact": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ],
+    "Stop": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":180}]}
+    ],
+    "SessionEnd": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5,"async":true}]}
+    ],
+    "ConfigChange": [
+      {"hooks":[{"type":"command","command":"node","args":["${CLAUDE_PLUGIN_ROOT}/runtime/hook.mjs"],"timeout":5}]}
+    ]
+  }
+}

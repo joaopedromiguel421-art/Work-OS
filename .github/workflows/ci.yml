@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: ${{ matrix.os }} / Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Runtime versions
+        run: node --version && npm --version
+      - name: Verify Work OS
+        run: npm run verify
+
+  native-plugin:
+    name: Claude Code 2.1.227 native validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch pinned official CLI without lifecycle scripts
+        run: npm install --ignore-scripts --no-save --package-lock=false --no-audit --no-fund @anthropic-ai/claude-code@2.1.227
+      - name: Validate and install plugin in an isolated Claude configuration
+        env:
+          CLAUDE_BIN: ${{ github.workspace }}/node_modules/@anthropic-ai/claude-code-linux-x64/claude
+          CLAUDE_CONFIG_DIR: ${{ runner.temp }}/work-os-claude
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1"
+          DISABLE_TELEMETRY: "1"
+          DISABLE_ERROR_REPORTING: "1"
+          DISABLE_AUTOUPDATER: "1"
+        run: npm run acceptance

@@ -1,0 +1,24 @@
+{
+  "name": "claude-work-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A native Claude Code work operating system distributed as one marketplace plugin.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "doctor": "node plugins/work-os/runtime/doctor.mjs --project .",
+    "quality": "node plugins/work-os/runtime/quality.mjs --project . --profile standard",
+    "quality:fast": "node plugins/work-os/runtime/quality.mjs --project . --profile fast",
+    "quality:release": "node plugins/work-os/runtime/quality.mjs --project . --profile release",
+    "test": "node scripts/run-tests.mjs --dir tests",
+    "eval": "node evals/run-routing.mjs",
+    "acceptance": "node scripts/run-tests.mjs --dir acceptance",
+    "verify": "npm run quality:release",
+    "upstream:check": "node scripts/upstream-check.mjs",
+    "license:audit": "node scripts/license-audit.mjs"
+  },
+  "license": "Apache-2.0"
+}

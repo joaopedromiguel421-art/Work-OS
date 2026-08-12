@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+.claude-plugin-data/
+artifacts/
+tmp/
+

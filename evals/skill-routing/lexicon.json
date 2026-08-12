@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "threshold": 3,
+  "note": "Evaluation-only lexical proxy. Claude Code remains the runtime router.",
+  "skills": {
+    "work": {"manualOnly":true,"positive":[["/work-os:work",20]]},
+    "project-context": {"manualOnly":true,"positive":[["/work-os:project-context",20]]},
+    "evidence-research": {"positive":[["primary sources",6],["official sources",6],["current documentation",6],["research question",5],["verify current",5],["pesquise fontes",6],["evidence brief",5]],"negative":[["competitor",5],["concorrente",5],["dataset",5],["csv",5]]},
+    "spec-delivery": {"positive":[["acceptance criteria",6],["non-goals",6],["change spec",7],["delivery spec",6],["especificacao da feature",6],["implementation slices",5]],"negative":[["adr",4],["tiny",3],["typo",4]]},
+    "architecture-decisions": {"positive":[["architecture decision",7],["adr",7],["tradeoff",5],["trust boundary",5],["data ownership",6],["decisao arquitetural",7],["system boundary",5]],"negative":[["security audit",4],["landing page",5]]},
+    "testing-strategy": {"positive":[["test strategy",7],["regression test",7],["flaky test",7],["coverage gap",6],["estrategia de testes",7],["test boundary",5]],"negative":[["run the tests",5],["execute tests",5]]},
+    "database-changes": {"positive":[["schema migration",8],["database migration",8],["backfill",7],["expand migrate contract",8],["alter table",6],["migracao de banco",8],["data retention schema",5]],"negative":[["read-only analysis",5],["query latency",4]]},
+    "performance-engineering": {"positive":[["performance regression",8],["latency",6],["throughput",6],["bundle size",7],["profiling",6],["core web vitals",7],["query latency",7],["performance budget",7]],"negative":[["tracking plan",4]]},
+    "security-engineering": {"positive":[["threat model",8],["security audit",8],["authorization",6],["authentication",5],["secret scanning",6],["vulnerability",7],["security review",7],["ameaca",5]],"negative":[["generic code review",5],["brand",4]]},
+    "technical-documentation": {"positive":[["api reference",7],["developer guide",7],["technical documentation",8],["runbook",6],["onboarding guide",6],["documentacao tecnica",8],["operational guide",6]],"negative":[["sales",4],["campaign",4],["marketing",4]]},
+    "product-discovery": {"positive":[["product discovery",8],["user problem",7],["customer problem",6],["opportunity mapping",7],["validate the problem",7],["prioritize opportunities",6],["descoberta de produto",8]],"negative":[["accepted requirements",5],["implementation",3]]},
+    "interface-design": {"positive":[["ux flow",8],["user flow",6],["accessibility",6],["interface design",8],["screen states",7],["keyboard focus",6],["responsive behavior",6],["design de interface",8],["checkout app screen",7]],"negative":[["landing page",7],["brand system",5],["campaign",4]]},
+    "brand-system": {"positive":[["brand system",9],["brand voice",7],["visual identity",7],["design tokens",6],["brand guidelines",8],["identidade da marca",8],["voice guidelines",7]],"negative":[["one email",5],["landing page",5],["single screen",4]]},
+    "market-intelligence": {"positive":[["competitor analysis",9],["competitive landscape",8],["market intelligence",9],["category landscape",7],["market trends",6],["analise de concorrentes",9],["competitive pricing",6],["competitor pricing",7],["category alternatives",6]],"negative":[["seo keyword",4],["csv",5],["tracking plan",5]]},
+    "positioning-and-offer": {"positive":[["positioning",7],["value proposition",7],["offer design",8],["pricing package",7],["ideal customer profile",7],["icp",5],["create an offer",8],["criar oferta",8],["before writing the landing page",4]],"negative":[["landing page",5],["email draft",4],["campaign launch",4]]},
+    "copy-and-content": {"positive":[["copywriting",8],["write copy",7],["newsletter",6],["content brief",6],["editorial plan",7],["blog post",6],["customer-facing copy",7],["escrever copy",8]],"negative":[["technical documentation",7],["landing page",6],["sales email",5],["seo audit",5]]},
+    "landing-page": {"positive":[["landing page",10],["conversion page",8],["lead capture page",8],["pagina de vendas",9],["page hero and form",7]],"negative":[["app screen",5],["campaign plan",5],["not a landing page",15],["before writing the landing page",12],["only one asset",8]]},
+    "seo": {"positive":[["seo audit",9],["organic search",7],["search intent",7],["indexing",6],["canonical tags",7],["keyword map",6],["technical seo",9],["auditoria seo",9]],"negative":[["paid ads",6],["campaign budget",5]]},
+    "cro-experimentation": {"positive":[["cro",7],["conversion experiment",9],["a/b test",8],["ab test",8],["experiment hypothesis",7],["funnel conversion",6],["teste de conversao",8]],"negative":[["tracking plan",5],["build landing page",5]]},
+    "campaign-growth": {"positive":[["campaign plan",9],["growth campaign",9],["paid ads",7],["acquisition campaign",8],["launch campaign",8],["campaign budget",7],["campanha de marketing",9]],"negative":[["landing page only",6],["organic search",5]]},
+    "analytics-measurement": {"positive":[["tracking plan",9],["event schema",9],["instrumentation",8],["analytics measurement",9],["metric definition",7],["attribution model",6],["plano de eventos",8]],"negative":[["analyze csv",7],["existing dataset",7],["competitor",4]]},
+    "sales": {"positive":[["sales strategy",8],["prospect account",7],["deal strategy",8],["sales email",8],["pipeline forecast",8],["discovery call",7],["proposal",5],["prospeccao",7]],"negative":[["marketing campaign",5],["newsletter",4]]},
+    "customer-support": {"positive":[["support ticket",8],["customer complaint",8],["customer support",9],["support response",8],["escalation response",7],["base de conhecimento suporte",7],["resposta ao cliente",6]],"negative":[["fix the bug",5],["sales",4]]},
+    "business-operations": {"positive":[["business operations",9],["sop",7],["raci",7],["process design",8],["operating cadence",7],["capacity planning",7],["processo operacional",8]],"negative":[["api runbook",4],["software architecture",5]]},
+    "data-analysis": {"positive":[["analyze csv",9],["analyze csv funnel",10],["event schema already exists",6],["existing dataset",8],["data analysis",8],["cohort analysis",7],["statistical analysis",7],["sql analysis",7],["analisar dados",8],["dataset",5]],"negative":[["tracking plan",8],["event schema",8],["market",4],["competitor",4]]}
+  }
+}

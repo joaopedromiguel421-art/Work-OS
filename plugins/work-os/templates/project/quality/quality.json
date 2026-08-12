@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "defaultProfile": "standard",
+  "profiles": {
+    "fast": {"purpose":"Low-latency checks after writes"},
+    "standard": {"purpose":"Required checks before task completion"},
+    "release": {"purpose":"Full checks before release or deployment approval"}
+  },
+  "checks": [
+    {
+      "id": "work-os-project",
+      "description": "Validate the Work OS project overlay and context budget",
+      "kind": "builtin",
+      "builtin": "work-os-project",
+      "profiles": ["fast", "standard", "release"],
+      "required": true
+    },
+    {
+      "id": "format-check",
+      "description": "Enable with the repository's deterministic formatter check",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "format:check"],
+      "profiles": ["fast", "standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 120000
+    },
+    {
+      "id": "lint",
+      "description": "Enable with the repository's deterministic lint command",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "lint"],
+      "profiles": ["fast", "standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 120000
+    },
+    {
+      "id": "typecheck",
+      "description": "Enable with the repository's deterministic type checker",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "typecheck"],
+      "profiles": ["fast", "standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 180000
+    },
+    {
+      "id": "unit-tests",
+      "description": "Enable with the repository's deterministic unit test command",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "test:unit"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 300000
+    },
+    {
+      "id": "integration-tests",
+      "description": "Enable with the repository's deterministic integration test command",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "test:integration"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 600000
+    },
+    {
+      "id": "build",
+      "description": "Enable with the repository's deterministic build command",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "build"],
+      "profiles": ["release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 300000
+    },
+    {
+      "id": "secret-scan",
+      "description": "Enable with the repository's deterministic secret scanner",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "security:secrets"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 180000
+    },
+    {
+      "id": "dependency-security",
+      "description": "Enable with the repository's pinned dependency vulnerability policy",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "security:dependencies"],
+      "profiles": ["release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 300000
+    },
+    {
+      "id": "schema-validation",
+      "description": "Enable when the project has machine-validated API or data schemas",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "schema:validate"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 180000
+    },
+    {
+      "id": "migration-validation",
+      "description": "Enable when the project has deterministic migration compatibility checks",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "migration:validate"],
+      "profiles": ["release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 300000
+    },
+    {
+      "id": "accessibility",
+      "description": "Enable for deterministic accessibility checks over relevant interfaces",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "test:a11y"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "enabled": false,
+      "timeoutMs": 300000
+    },
+    {
+      "id": "performance-budget",
+      "description": "Enable after establishing a stable deterministic performance budget",
+      "kind": "command",
+      "command": "npm",
+      "args": ["run", "test:performance"],
+      "profiles": ["release"],
+      "required": false,
+      "enabled": false,
+      "timeoutMs": 600000
+    }
+  ]
+}

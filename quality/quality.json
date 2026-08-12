@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "defaultProfile": "standard",
+  "profiles": {
+    "fast": {"purpose":"Structural validation"},
+    "standard": {"purpose":"Structure, tests, and routing evals"},
+    "release": {"purpose":"All checks including acceptance and licenses"}
+  },
+  "checks": [
+    {
+      "id": "repository-structure",
+      "description": "Validate marketplace, plugin inventory, ownership, and context budgets",
+      "kind": "command",
+      "command": "node",
+      "args": ["scripts/validate.mjs"],
+      "profiles": ["fast", "standard", "release"],
+      "required": true,
+      "timeoutMs": 30000
+    },
+    {
+      "id": "node-tests",
+      "description": "Run dependency-free unit and integration tests",
+      "kind": "command",
+      "command": "node",
+      "args": ["scripts/run-tests.mjs", "--dir", "tests"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "timeoutMs": 180000
+    },
+    {
+      "id": "routing-evals",
+      "description": "Evaluate positive and negative Skill routing cases",
+      "kind": "command",
+      "command": "node",
+      "args": ["evals/run-routing.mjs"],
+      "profiles": ["standard", "release"],
+      "required": true,
+      "timeoutMs": 60000
+    },
+    {
+      "id": "acceptance",
+      "description": "Exercise installation, initialization, policies, workflows, and cross-platform paths",
+      "kind": "command",
+      "command": "node",
+      "args": ["scripts/run-tests.mjs", "--dir", "acceptance"],
+      "profiles": ["release"],
+      "required": true,
+      "timeoutMs": 180000
+    },
+    {
+      "id": "license-audit",
+      "description": "Validate pins, license notices, and adaptation records",
+      "kind": "command",
+      "command": "node",
+      "args": ["scripts/license-audit.mjs"],
+      "profiles": ["release"],
+      "required": true,
+      "timeoutMs": 30000
+    }
+  ]
+}

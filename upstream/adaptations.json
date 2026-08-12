@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "policy": "Conceptual clean-room adaptation only; no source body is vendored verbatim.",
+  "records": [
+    {
+      "repository": "anthropics/skills",
+      "source": "skills/webapp-testing/SKILL.md",
+      "blobSha": "4726215301db64a0cc4d41fc3219c61f37a30f4a",
+      "mode": "reference-only",
+      "targets": ["plugins/work-os/skills/evidence-research/SKILL.md"],
+      "adaptation": "Only the principle of isolating large tool output and loading detail progressively was considered; source-available text and scripts were excluded."
+    },
+    {
+      "repository": "anthropics/skills",
+      "source": "skills/frontend-design/SKILL.md",
+      "blobSha": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
+      "mode": "reference-only",
+      "targets": ["plugins/work-os/skills/interface-design/SKILL.md"],
+      "adaptation": "Used only to compare coverage; no text, brand material, or source-available content was incorporated."
+    },
+    {
+      "repository": "Fission-AI/OpenSpec",
+      "source": "openspec/specs/cli-archive/spec.md",
+      "blobSha": "6d13b79721125d7adc95687aab1c2c12fbe510b5",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/spec-delivery/SKILL.md", "plugins/work-os/templates/project/specs"],
+      "adaptation": "Simplified the current/change/archive lifecycle; omitted CLI, schema engine, and command system."
+    },
+    {
+      "repository": "github/spec-kit",
+      "source": "templates/commands/specify.md",
+      "blobSha": "54151e8b423026a356e228eb04d1a6aa368c385c",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/spec-delivery/SKILL.md", "plugins/work-os/templates/project/specs/templates/spec.md"],
+      "adaptation": "Retained separation between outcome specification and implementation detail; removed command orchestration."
+    },
+    {
+      "repository": "github/spec-kit",
+      "source": "templates/commands/plan.md",
+      "blobSha": "664f4281142ada0d1e678d46976c4b36df7d68d0",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/templates/project/specs/templates/plan.md"],
+      "adaptation": "Adapted plan-as-evidence-slices to the main-thread model."
+    },
+    {
+      "repository": "github/spec-kit",
+      "source": "templates/commands/tasks.md",
+      "blobSha": "64146a35aacbef8f607be9dc4e376b191af8cd4e",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/templates/project/specs/templates/tasks.md"],
+      "adaptation": "Reduced task generation to a short evidence checklist; no task engine."
+    },
+    {
+      "repository": "addyosmani/agent-skills",
+      "source": "agents/web-performance-auditor.md",
+      "blobSha": "44bc45d807fa6aa59c001741dec499ddb27122c6",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/performance-engineering/SKILL.md", "plugins/work-os/skills/testing-strategy/SKILL.md"],
+      "adaptation": "Converted web performance coverage ideas into one measurement Skill; did not import the auditor agent."
+    },
+    {
+      "repository": "obra/superpowers",
+      "source": "skills/systematic-debugging/SKILL.md",
+      "blobSha": "095d194ac041502905f15b01d22d294fb94db8b2",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/work/references/workflows/bug.md"],
+      "adaptation": "Used evidence-before-fix discipline while deliberately keeping debugging in the main conversation."
+    },
+    {
+      "repository": "obra/superpowers",
+      "source": "skills/verification-before-completion/SKILL.md",
+      "blobSha": "7d45333cc4a49c57a80df6c1fe2fa777a207afbc",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/runtime/quality.mjs", "plugins/work-os/skills/testing-strategy/SKILL.md"],
+      "adaptation": "Turned completion verification into deterministic manifest gates, not a duplicated agent procedure."
+    },
+    {
+      "repository": "obra/superpowers",
+      "source": "skills/writing-plans/SKILL.md",
+      "blobSha": "dd2702b8bab0dbe6b6824d8d00669be44fbb8be7",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/spec-delivery/SKILL.md"],
+      "adaptation": "Kept plan-before-change and small slices; omitted its orchestration topology."
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "source": "README.md",
+      "blobSha": "80b17bc98535127937ad3f8dff3cd5cf1e889563",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/interface-design/SKILL.md", "plugins/work-os/agents/ux-critic.md"],
+      "adaptation": "Consolidated interface critique coverage into one Skill and one read-only critic; no provider-specific generated copies."
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "source": "skill/reference/live.md",
+      "blobSha": "cd77e2aea6233861680e6804979b520b3ab07954",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/interface-design/SKILL.md"],
+      "adaptation": "Used broad interface-state review dimensions with original wording and Work OS boundaries."
+    },
+    {
+      "repository": "coreyhaines31/marketingskills",
+      "source": "skills/copywriting/SKILL.md",
+      "blobSha": "0793e62270e203de1b2e2ff591a56015e4cf0075",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/copy-and-content/SKILL.md", "plugins/work-os/skills/landing-page/SKILL.md"],
+      "adaptation": "Consolidated copy procedure and claim guardrails under one authority."
+    },
+    {
+      "repository": "coreyhaines31/marketingskills",
+      "source": "skills/seo-audit/SKILL.md",
+      "blobSha": "c525957d9237c20aa6e8eb3ec61b8596a6b3635e",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/seo/SKILL.md"],
+      "adaptation": "Consolidated technical and on-page audit concepts; removed provider/tool assumptions."
+    },
+    {
+      "repository": "coreyhaines31/marketingskills",
+      "source": "skills/cro/SKILL.md",
+      "blobSha": "74a2394f838e0f07a5a5f06eee99047b8a5adcd6",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/cro-experimentation/SKILL.md"],
+      "adaptation": "Reframed CRO around preregistered hypotheses, measurement validity, and ethical guardrails."
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "source": "product-management/skills/synthesize-research/SKILL.md",
+      "blobSha": "37920edef38ed91481547e426dbd1505bbd0a105",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/evidence-research/SKILL.md", "plugins/work-os/skills/product-discovery/SKILL.md"],
+      "adaptation": "Adapted concise research synthesis/output contracts without provider integrations."
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "source": "sales/skills/create-an-asset/SKILL.md",
+      "blobSha": "68206db0112e4c759aa09ea2986c707034602470",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/sales/SKILL.md"],
+      "adaptation": "Consolidated sales artifact discipline into one sales owner; no CRM/MCP defaults."
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "source": "customer-support/README.md",
+      "blobSha": "04d280dfc84c8650630102f65558600cbb1473f7",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/customer-support/SKILL.md"],
+      "adaptation": "Used domain coverage to define a provider-neutral support contract."
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "source": "data/skills/analyze/SKILL.md",
+      "blobSha": "31ce9c58dd4de3038643750373de5b71a2494fa2",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/skills/data-analysis/SKILL.md"],
+      "adaptation": "Adapted reproducible analysis output expectations; no external data connector is enabled."
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "source": ".kiro/docs/security-guide.md",
+      "blobSha": "c034bdfb1899377491cb758978fc1f7d1bf978c3",
+      "mode": "conceptual-adaptation",
+      "targets": ["plugins/work-os/runtime/hook.mjs", "governance/security-policy.md"],
+      "adaptation": "Used safety category ideas to design a smaller fail-closed hook policy; no full configuration, agents, or runtime was copied."
+    }
+  ]
+}
